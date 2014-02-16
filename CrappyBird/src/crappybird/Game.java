@@ -104,7 +104,7 @@ public class Game implements Runnable {
 
     private boolean hasCollided(Bird bird) {
         for (Rectangle obstacle : this.getObstacles()) {
-            if (isTouchingX(bird, obstacle) && isTouchingY(bird, obstacle)) {
+            if ((isTouchingX(bird, obstacle)) && (isTouchingY(bird, obstacle) || (bird.getY() < 0))) {
                 return true;
             }
         }
@@ -123,7 +123,7 @@ public class Game implements Runnable {
 
     /**
      * Returns if the passed bird and obstacle are in the same Y coordinates.
-
+     *
      * @return      if the passed bird and obstacle are in the same Y coordinates
      */
     private boolean isTouchingY(Bird bird, Rectangle obstacle) {
