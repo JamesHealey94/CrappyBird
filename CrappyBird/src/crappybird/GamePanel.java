@@ -57,7 +57,6 @@ public class GamePanel extends JPanel implements Runnable {
         final Action action = new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(actionName); // TODO remove
                 game.getBird().setStepY(stepY);
             }
         };
